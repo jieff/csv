@@ -7,9 +7,9 @@
     <title>Importar Dados</title>
 </head>
 <body>
-    <h1>Upload para Importação de Dados</h1>
+    <h1>Upload CSV</h1>
 
-    <form  method="POST" action="processa.php" enctype="multipart/form-data">
+    <form  method="POST" action="./src/importar.php" enctype="multipart/form-data">
         <label for="">Arquivo</label>
         <input type="file" name="file"><br><br>
         <input type="submit" value="Enviar">
