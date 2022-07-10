@@ -1,0 +1,29 @@
+version: '3'
+services:
+  php:
+    build: .
+    container_name: php
+    restart: always
+    ports:
+     - "80:80"
+     - "443:443"
+    volumes:
+     - ./:/var/www/html
+     - ./php/php.ini:/usr/local/etc/php/php.ini
+
+  db:
+    image: mysql:5.7.38
+    container_name: db
+    restart: always
+    ports:
+     - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db:
+    driver: local
+
