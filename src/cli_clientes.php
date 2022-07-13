@@ -22,7 +22,7 @@
             $codcliente           = intval(mb_convert_encoding($data[0], "utf8")); //int 
             $nome                 = mb_convert_encoding($data[1], "utf-8");
             $cpfcnpj              = mb_convert_encoding($data[3], "utf-8"); //(1 - pessoafisica - 2 pessoa juridica)
-            //$datanascimento        = mb_convert_encoding($data[4], "utf-8");
+            $datanascimento        = mb_convert_encoding($data[4], "utf-8");
             $rg                   = mb_convert_encoding($data[5], "utf-8");
             $estadocivil          = intval(mb_convert_encoding($data[6], "utf-8")); //int (1 - solteiro - 2 - casado - 3 divorciado, etc...)
             $inscricaoestadual    = mb_convert_encoding($data[10], "utf-8");
@@ -30,6 +30,11 @@
             $nomemae              = mb_convert_encoding($data[12], "utf-8");
             $nomefantasia         = mb_convert_encoding($data[13], "utf-8");
             $obs                  = mb_convert_encoding($data[29], "utf-8");
+
+
+            //formata a data do cliente para o padrão Y-m-d
+            $datanascimento = new DateTime($datanascimento);
+            $datanascimento = $datanascimento->format('Y-m-d');
             
             $pessoafisica = strlen($cpfcnpj);
 
@@ -77,8 +82,8 @@
             //
             //echo "</pre>"; exit;
             
-            $result = $mysqli->query("INSERT INTO cli_clientes (codcliente, nome, cpfcnpj, pessoafisica, rg, estadocivil, inscricaoestadual, nomepai, nomemae, nomefantasia, obs ) 
-            VALUES( $codcliente, '$nome', '$cpfcnpj', $pessoafisica, '$rg', $estadocivil, '$inscricaoestadual', '$nomepai', '$nomemae', '$nomefantasia', '$obs')");
+            $result = $mysqli->query("INSERT INTO cli_clientes (codcliente, nome, cpfcnpj, datanascimento, pessoafisica, rg, estadocivil, inscricaoestadual, nomepai, nomemae, nomefantasia, obs ) 
+            VALUES( $codcliente, '$nome', '$cpfcnpj', '$datanascimento', $pessoafisica, '$rg', $estadocivil, '$inscricaoestadual', '$nomepai', '$nomemae', '$nomefantasia', '$obs')");
             
         }
             
