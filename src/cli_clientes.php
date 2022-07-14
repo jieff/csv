@@ -31,6 +31,8 @@
             $nomefantasia         = mb_convert_encoding($data[13], "utf-8");
             $obs                  = mb_convert_encoding($data[29], "utf-8");
 
+            //echo $nome;
+            //exit;
 
             //formata a data do cliente para o padrão Y-m-d
             $datanascimento = new DateTime($datanascimento);
