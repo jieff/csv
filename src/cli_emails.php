@@ -25,11 +25,13 @@
            
             $result                       = $mysqli->query("INSERT INTO cli_emails ( cli_clientes_codcliente, email ) 
                                                              VALUES ( $cli_clientes_codcliente,  '$email' )");  
+
+            $trim = $mysqli->query("DELETE FROM cli_emails WHERE email=''");
             
         }
  
 
-        if($result){
+        if($result == true && $trim == true){
             echo "Dados inseridos com sucesso";
         } else {
             echo "Error ao inserir os dados". die($mysqli->error);

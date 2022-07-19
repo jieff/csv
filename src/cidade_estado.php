@@ -25,32 +25,7 @@
             $cidade                       = 145;
             $estado                       = 14;
 
-            //echo gettype($cli_clientes_codcliente);
-            //echo gettype($cidade);
-            //echo gettype($estado);
-            //exit;
-            //echo $nome;
-            //echo "<br>";
-            //$cidade;
-            //$estado;
-
-            //$sql = "UPDATE cli_enderecos SET sis_cidades_codcidade='$nome'
-            //        WHERE cli_clientes_codcliente=$cli_clientes_codcliente";
-            //
-            //$mysqli->query($sql); exit;
-
-            //$sql = "SELECT codcidade, sis_estados_codestado, nome 
-            //        FROM   sis_cidades
-            //        WHERE nome='$nome'";
-            //
-            //$rows = $mysqli->query($sql);
-
-            //foreach($rows as $row){
-            //      
-            //    echo "Nome da Cidade : " . $row["nome"];
-            //
-            //    exit;
-            //}
+           
 
             $result = $mysqli->query("INSERT INTO cli_enderecos ( cli_clientes_codcliente, sis_cidades_sis_estados_codestado, sis_cidades_codcidade ) 
                                     VALUES ( $cli_clientes_codcliente, $estado, $cidade )");  

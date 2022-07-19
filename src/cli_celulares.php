@@ -21,17 +21,19 @@
             
             $cli_clientes_codcliente = mb_convert_encoding($data[0], "utf-8");
 
-            $telefonefixo                   = mb_convert_encoding($data[15], "utf-8");
-            $numerocelular                  = mb_convert_encoding($data[16], "utf-8");
-           
-           
-            $ncelular                = $mysqli->query("INSERT INTO cli_celulares ( cli_clientes_codcliente, numero ) VALUES ( $cli_clientes_codcliente,  '$telefonefixo' )");  
-            
-            $tfixo                   = $mysqli->query("INSERT INTO cli_celulares ( cli_clientes_codcliente, numero ) VALUES ( $cli_clientes_codcliente,  '$numerocelular' )");
+            $telefonefixo    = mb_convert_encoding($data[15], "utf-8");
+            $numerocelular   = mb_convert_encoding($data[16], "utf-8");
+             
+            $telefonefixo    = $mysqli->query("INSERT INTO cli_celulares ( cli_clientes_codcliente, numero ) VALUES ( $cli_clientes_codcliente,  '$numerocelular' )");
+            $numerocelular   = $mysqli->query("INSERT INTO cli_celulares ( cli_clientes_codcliente, numero ) VALUES ( $cli_clientes_codcliente,  '$telefonefixo' )");
+        
+            $mysqli->query("DELETE FROM cli_celulares WHERE numero='1'");
+            $mysqli->query("DELETE FROM cli_celulares WHERE numero=''");
+
         }
  
 
-        if($ncelular == true && $tfixo  == true ){
+        if($telefonefixo == true && $numerocelular == true){
             echo "Dados inseridos com sucesso";
         } else {
             echo "Error ao inserir os dados". die($mysqli->error);
