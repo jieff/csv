@@ -28,13 +28,8 @@
                 $ativa = 1;
             }
 
-            //echo gettype($codcliente);
-            //echo "<br>";
-            //echo gettype($ativa);
-            //exit;
-          
             $result = $mysqli->query("UPDATE cli_clientes SET situacao=$ativa WHERE codcliente='$codcliente'");
-            //exit;                            
+                                    
         }
  
 
