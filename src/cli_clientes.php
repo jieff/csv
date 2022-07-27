@@ -31,13 +31,11 @@
             $nomefantasia         = mb_convert_encoding($data[13], "utf-8");
             $obs                  = mb_convert_encoding($data[29], "utf-8");
 
-            //echo $nome;
-            //exit;
 
             //formata a data do cliente para o padrão Y-m-d
             $datanascimento = new DateTime($datanascimento);
             $datanascimento = $datanascimento->format('Y-m-d');
-            
+
             $pessoafisica = strlen($cpfcnpj);
 
             $cpf = 11;
@@ -51,38 +49,6 @@
             } else {
                 $pessoafisica = 0; //CNPJ
             }
-           
-            //print_r("Cod cliente : ".$codcliente);
-            //echo "<br>";
-            //print_r("Nome : ".$nome);
-            //echo "<br>";
-            //print_r("1 - CPF | 0 - CNPJ : ".$pessoafisica);
-            //echo "<br>";
-            //print_r("Data Nascimento : ".$datanascimento);
-            //echo "<br>";
-            //print_r("RG : ".$rg);
-            //echo "<br>";
-            //print_r("Estado Civil : ".$estadocivil);
-            //echo "<br>";
-            //print_r("Nome do Pai : ".$nomepai);
-            //echo "<br>";
-            //print_r("Nome da Mae : ".$nomemae);
-            //echo "<br>";
-            //print_r("Nome Fantasia : ".$nomefantasia);
-            //echo "<br>";
-            //print_r("Observacoes : ".$obs);
-            //exit;
-
-           // $datanascimento = new DateTime($datanascimento);
-            //echo $datanascimento->format('Y-m-d');
-            //echo gettype($datanascimento);
-
-            //
-            //echo "<pre>";
-            //print_r($datanascimento);
-            //echo "<br>";
-            //
-            //echo "</pre>"; exit;
             
             $result = $mysqli->query("INSERT INTO cli_clientes (codcliente, nome, cpfcnpj, datanascimento, pessoafisica, rg, estadocivil, inscricaoestadual, nomepai, nomemae, nomefantasia, obs ) 
             VALUES( $codcliente, '$nome', '$cpfcnpj', '$datanascimento', $pessoafisica, '$rg', $estadocivil, '$inscricaoestadual', '$nomepai', '$nomemae', '$nomefantasia', '$obs')");
