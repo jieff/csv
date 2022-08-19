@@ -18,7 +18,8 @@
         // Pegar o campo email da A mil e insere no campo email do bemtevi
         while(($data = fgetcsv($object, 1000, ",")) !== FALSE)
         {
-            
+
+            /** captura informações relacionadas a e-mail */
             $cli_clientes_codcliente      = mb_convert_encoding($data[0], "utf-8");
 
             $email                        = mb_convert_encoding($data[14], "utf-8");

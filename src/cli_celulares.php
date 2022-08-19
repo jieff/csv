@@ -9,6 +9,9 @@
 
     $extension = end($ext);
 
+    /** verifica de a extensão do arquivo trata-se de um csv
+     *  em cado de positivo entra no else, para fazer a leitura do mesmo e extrair as informações
+     */
     if($extension != "csv"){
         echo "Extensão Inválida";
     } else {
@@ -19,11 +22,14 @@
         while(($data = fgetcsv($object, 1000, ",")) !== FALSE)
         {
             
+            /** captura a primeira posição do arquivo */
             $cli_clientes_codcliente = mb_convert_encoding($data[0], "utf-8");
 
+            /** captura a posição 15 e 16 referente a telefone fixo e celular */
             $telefonefixo    = mb_convert_encoding($data[15], "utf-8");
             $numerocelular   = mb_convert_encoding($data[16], "utf-8");
              
+            /** realiza a query de insert na tabela cli_celulares */
             $telefonefixo    = $mysqli->query("INSERT INTO cli_celulares ( cli_clientes_codcliente, numero ) VALUES ( $cli_clientes_codcliente,  '$numerocelular' )");
             $numerocelular   = $mysqli->query("INSERT INTO cli_celulares ( cli_clientes_codcliente, numero ) VALUES ( $cli_clientes_codcliente,  '$telefonefixo' )");
         
@@ -32,7 +38,7 @@
 
         }
  
-
+        /** verifica o retorno das variaveis e retorna mensagem ao solicitante */
         if($telefonefixo == true && $numerocelular == true){
             echo "Dados inseridos com sucesso";
         } else {

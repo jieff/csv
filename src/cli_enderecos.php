@@ -17,6 +17,13 @@
 
         while(($data = fgetcsv($object, 1000, ",")) !== FALSE)
         {
+
+            /**
+             *  valores a serem capturados para alimentar a tabela cli_enderecos
+             * 
+             *  codcliente, rua, complemento, bairro, cep, obs, cidade, estado
+             * 
+             */
             
             $cli_clientes_codcliente      = mb_convert_encoding($data[0], "utf-8"); //int
             $rua                          = mb_convert_encoding($data[18], "utf-8");
@@ -41,7 +48,11 @@
 
         }
  
-
+        
+        /** Verifica se as query referente a endereço, cidade e estado 
+         *  foram executadas, em caso de sucesso retorna mendagem de positivo, 
+         *  em caso de error retorna mensagem de negativo
+         */
         if($endereco == true && $cidade == true && $estado == true ){
             echo "Dados inseridos com sucesso";
         } else {

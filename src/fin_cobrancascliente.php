@@ -59,6 +59,7 @@
                                      cli_enderecos_cli_clientes_codcliente, descricao, datacobranca, especial_DataBilhetagemInicial, especial_DataBilhetagemFinal) 
                                     VALUES($cli_clientes_codcliente, $fin_tiposcobranca_codtiposcobranca,
                                     $cli_enderecos_cli_clientes_codcliente, '$descricao', '$datacobranca', '$especial_DataBilhetagemInicial', '$especial_DataBilhetagemFinal')");
+                                    
                             
         }
  
