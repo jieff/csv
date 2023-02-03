@@ -25,6 +25,19 @@ O arquivo Dockerfile é responsável por baixar o servidor apache e o php na versã
         "codlocalizacao": "int",
         "descricao": "string"
     }
+},
+{
+    "tabela": "pat_equipamentos",
+    "campos":{
+        "descricao": "",
+        "numeroserial":"",
+        "ip":"",
+        "datacompra":"",
+        "obs":"",
+        "porta":"",
+        "dataprimeiraassociacaocliente":"",
+        "dataultimaassociaacaocliente":""
+    }
 }
 
 ```

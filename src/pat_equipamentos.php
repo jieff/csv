@@ -22,28 +22,26 @@
             $descricao = mb_convert_encoding($data[0], "utf-8");
             $mumeroserial = mb_convert_encoding($data[1], "utf-8");
             $ip = mb_convert_encoding($data[2], "utf-8");
+
             $datacompra = mb_convert_encoding($data[4], "utf-8");
+            $datacompra = str_replace("/", "-", $datacompra);
+            $datacompra = date('Y-m-d', strtotime($datacompra));
+          
             $obs = mb_convert_encoding($data[5], "utf-8");
-            $porta = mb_convert_encoding($data[3], "utf-8");
+            $porta = intval(mb_convert_encoding($data[3], "utf-8"));
+
             $dataprimeiraassociacaocliente = mb_convert_encoding($data[4], "utf-8");
+            $dataprimeiraassociacaocliente = str_replace("/", "-", $dataprimeiraassociacaocliente);
+            $dataprimeiraassociacaocliente = date('Y-m-d', strtotime($dataprimeiraassociacaocliente));
+
             $dataultimaassociacaocliente = mb_convert_encoding($data[4], "utf-8");
+            $dataultimaassociacaocliente = str_replace("/", "-", $dataultimaassociacaocliente);
+            $dataultimaassociacaocliente = date('Y-m-d', strtotime($dataultimaassociacaocliente));
 
-            //formata a data do cliente para o padrão Y-m-d
-            $datacompra = new DateTime($datacompra);
-            $datacompra = $datacompra->format('Y-m-d');
-
-            //formata a data do cliente para o padrão Y-m-d
-            $dataprimeiraassociacaocliente = new DateTime($dataprimeiraassociacaocliente);
-            $dataprimeiraassociacaocliente = $dataprimeiraassociacaocliente->format('Y-m-d');
-
-            //formata a data do cliente para o padrão Y-m-d
-            $dataultimaassociacaocliente = new DateTime($dataultimaassociacaocliente);
-            $dataultimaassociacaocliente = $dataultimaassociacaocliente->format('Y-m-d');
-  
 
             $result = $mysqli->query("INSERT INTO pat_equipamentos (descricao, numeroserial, ip, datacompra, obs, porta, dataprimeiraassociacaocliente,
             dataultimaassociacaocliente) 
-            VALUES ('$descricao', '$numeroserial', '$ip', '$datacompra', '$obs', '$porta', '$dataprimeiraassociacaocliente',
+            VALUES ('$descricao', '$numeroserial', '$ip', '$datacompra', '$obs', $porta, '$dataprimeiraassociacaocliente',
             '$dataultimaassociacaocliente')");
         }
  
