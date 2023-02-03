@@ -21,10 +21,10 @@ O arquivo Dockerfile é responsável por baixar o servidor apache e o php na versã
 
 ```json
 {
-    'tabela': 'pat_localizacoes',
-    'campos': {
-        'codlocalizacao': int,
-        'descricao': 'string'
+    "tabela": "pat_localizacoes",
+    "campos": {
+        "codlocalizacao": "int",
+        "descricao": "string"
     }
 }
 
