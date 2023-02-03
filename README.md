@@ -6,10 +6,15 @@ O arquivo Dockerfile é responsável por baixar o servidor apache e o php na versã
 
 ## Docker-compose.yml
 
- . Cria um servico para rodar o APACHE + PHP, configurações de restart, porta e volume.
- . Cria um servico para rodar o MYSQL, configurações de restart, porta, variável do usuário root e volume.
- 
+ - Cria um servico para rodar o APACHE + PHP, configurações de restart, porta e volume.
+ - Cria um servico para rodar o MYSQL, configurações de restart, porta, variável do usuário root e volume.
 
+ Rodar a aplicação utilizando o docker compose
+ 
+```
+    docker-compose up -d
+
+```
 {
     'tabela': 'pat_localizacoes',
     'campos': {
