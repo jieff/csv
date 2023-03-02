@@ -1,3 +1,7 @@
 *.csv
 
 ./src/files/*.csv
+
+.gitignore
+
+.env
