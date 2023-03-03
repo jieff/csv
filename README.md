@@ -18,8 +18,18 @@ O arquivo Dockerfile é responsável por baixar o servidor apache e o php na versã
 Caso utilize o docker-compose, basta digitar no navegador localhost
 
 
-## Tabelas
+## Composer (Gerenciador de dependencias)
 
+- Segue referencia oficial abaixo para instalação do gerenciador de dependencias composer.
+
+Foi instalado para utilizar a lib dotenv no gerenciamento das variavéis de ambiente. 
+
+```
+    https://getcomposer.org/doc/00-intro.md
+```
+
+
+<!--
 ```json
 {
     "tabela": "pat_localizacoes",
@@ -43,3 +53,4 @@ Caso utilize o docker-compose, basta digitar no navegador localhost
 }
 
 ```
+->
