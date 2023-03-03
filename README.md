@@ -1,10 +1,10 @@
 # csv
 
-## DockerFile
+## DockerFile (Opcional)
 
 O arquivo Dockerfile é responsável por baixar o servidor apache e o php na versão expecificada, roda um comando que mover as informações do arquivo php.ini da estrutura do projeto, para dentro do container, instala a dependencia mysqli no apache para fazer a conexão com o banco de dados.
 
-## Docker-compose.yml
+## Docker-compose.yml (Opcional)
 
  - Cria um servico para rodar o APACHE + PHP, configurações de restart, porta e volume.
  - Cria um servico para rodar o MYSQL, configurações de restart, porta, variável do usuário root e volume.
@@ -18,9 +18,9 @@ O arquivo Dockerfile é responsável por baixar o servidor apache e o php na versã
 Caso utilize o docker-compose, basta digitar no navegador localhost
 
 
-## Composer (Gerenciador de dependencias)
+## Composer (Gerenciador de dependências)
 
-- Segue referencia oficial abaixo para instalação do gerenciador de dependencias composer.
+- Segue referência oficial abaixo para instalação do gerenciador de dependencias composer.
 
 Foi instalado para utilizar a lib dotenv no gerenciamento das variavéis de ambiente. 
 
