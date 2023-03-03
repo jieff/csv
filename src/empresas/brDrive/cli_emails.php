@@ -30,6 +30,9 @@
             $result = $mysqli->query("INSERT INTO cli_emails (cli_clientes_codcliente, email, codtipocontato) 
             VALUES( $codcliente, '$email1', codtipocontato)");
 
+            echo('test ok');
+            exit;
+
             $result = $mysqli->query("INSERT INTO cli_emails (cli_clientes_codcliente, email, codtipocontato) 
             VALUES( $codcliente, '$email2', codtipocontato)");
             
