@@ -4,6 +4,7 @@
 <div class="p-5 mb-4 bg-light rounded-3">
   <div class="container-fluid py-5">
     <h3 class="display-5 fw-bold">Sistema de Importação</h3>
+    <br>
     <p class="col-md-8 fs-4">
     O sistema permite que você facilmente carregue dados de um arquivo CSV para a base de dados. 
     Isso significa que você pode mover informações importantes, como listas de clientes, lista de equipamentos e muito mais, de uma forma organizada e eficiente. Em vez de digitar cada informação manualmente, você pode importá-las a partir de um arquivo CSV, economizando tempo e esforço. 

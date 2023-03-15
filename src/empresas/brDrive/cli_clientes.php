@@ -17,20 +17,14 @@
 
         while(($data = fgetcsv($object, 1000, ",")) !== FALSE)
         {
-            /**
-             *  Pegas os seguintes valores:
-             *  
-             *  id, nome, cpf ou cnpj, data de nascimento, rg,
-             *  estado civil, inscrinção estadual, nome do pai, nome da mae, nome fantasia, obs
-             * 
-             */
+            
             $codcliente            = intval(mb_convert_encoding($data[0], "utf8")); //int 
             
             $nome                  = mb_convert_encoding($data[1], "utf-8"); //  razao social
 
             $cpfcnpj               = mb_convert_encoding($data[2], "utf-8"); //(1 - pessoafisica - 2 pessoa juridica)
-
-
+            $cpfcnpj               = preg_replace("/[^0-9]/", "", $cpfcnpj); //RETIRA OS CARACTERES
+            
             $datanascimento        = mb_convert_encoding($data[3], "utf-8");
 
             if($datanascimento == '00/00/0000'){
@@ -53,9 +47,17 @@
            
             $inscricaomunicipal    = mb_convert_encoding($data[7],"utf-8");
 
+            $pessoa =  mb_convert_encoding($data[8],"utf-8");
+
+            $razaosocial = mb_convert_encoding($data[6], "utf-8");
+
+            $inscricaoEstadual_UF = mb_convert_encoding($data[9], "utf-8");
+
             
-            $result = $mysqli->query("INSERT INTO cli_clientes (codcliente, nome, cpfcnpj, datanascimento, rg, inscricaoestadual, nomefantasia, inscricaomunicipal ) 
-            VALUES( $codcliente, '$nome', '$cpfcnpj', '$datanascimento', '$rg', '$inscricaoestadual', '$nomefantasia', '$inscricaomunicipal')");
+            $result = $mysqli->query("INSERT INTO cli_clientes (codcliente, nome, cpfcnpj, datanascimento, rg, inscricaoestadual,
+            nomefantasia, inscricaomunicipal, pessoafisica, razaosocial, inscricaoEstadual_UF ) 
+            VALUES( $codcliente, '$nome', '$cpfcnpj', '$datanascimento', '$rg', '$inscricaoestadual', 
+            '$nomefantasia', '$inscricaomunicipal', $pessoa, '$razaosocial', '$inscricaoEstadual_UF' )");
             
             echo('dado inserido com sucesso');
             exit;

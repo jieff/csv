@@ -27,13 +27,18 @@
             $cep                        = mb_convert_encoding($data[6], "utf-8");
             $complemento                = mb_convert_encoding($data[7], "utf-8");
 
+            $endereco .= " " . $numero;
+
             
-            $endereco = $mysqli->query("INSERT INTO cli_enderecos ( cli_clientes_codcliente, sis_cidades_codcidade, sis_cidades_sis_estados_codestado, rua, bairro, numeroEndereco, cep, complemento ) 
-                                       VALUES ( $cli_clientes_codcliente, $codcidade, $codestado, '$endereco', '$bairro', '$numeroEndereco', '$cep', '$complemento' )");                           
+            $end = $mysqli->query("INSERT INTO cli_enderecos ( cli_clientes_codcliente, sis_cidades_codcidade, sis_cidades_sis_estados_codestado, rua, bairro, numeroEndereco, cep, complemento ) 
+                                       VALUES ( $cli_clientes_codcliente, $codcidade, $codestado, '$endereco', '$bairro', '$numeroEndereco', '$cep', '$complemento' )");    
+                                       
+            echo('dado inserido com sucesso');
+            exit;                            
             
         }
  
-        if($endereco == true ){
+        if($end == true ){
             echo "Dados inseridos com sucesso";
         } else {
             echo "Error ao inserir os dados". die($mysqli->error);
