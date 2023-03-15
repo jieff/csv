@@ -11,6 +11,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <form  method="POST" action="./src/fin_cobrancascliente.php" enctype="multipart/form-data">
 =======
                         <form  method="POST" action="./src/empresas/brDrive/cli_enderecos.php" enctype="multipart/form-data">
@@ -18,6 +19,9 @@
 =======
                         <form  method="POST" action="./src/empresas/brDrive/cli_emails.php" enctype="multipart/form-data">
 >>>>>>> a6ab1af (update brdrive cli_emails)
+=======
+                        <form  method="POST" action="./src/empresas/brDrive/cli_clientes.php" enctype="multipart/form-data">
+>>>>>>> 3436ae5 (update csv brSim)
                             <label for="">Arquivo</label>
                             <input class="btn btn-outline-light" type="file" name="file">
                             <!--<label for="">Tabela</label>
