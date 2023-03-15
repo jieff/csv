@@ -33,29 +33,3 @@ Foi instalado para utilizar a lib dotenv no gerenciamento das variavéis de ambie
     https://getcomposer.org/doc/00-intro.md
 ```
 
-
-<!--
-```json
-{
-    "tabela": "pat_localizacoes",
-    "campos": {
-        "codlocalizacao": "int",
-        "descricao": "string"
-    }
-},
-{
-    "tabela": "pat_equipamentos",
-    "campos":{
-        "descricao": "",
-        "numeroserial":"",
-        "ip":"",
-        "datacompra":"",
-        "obs":"",
-        "porta":"",
-        "dataprimeiraassociacaocliente":"",
-        "dataultimaassociaacaocliente":""
-    }
-}
-
-```
-->
