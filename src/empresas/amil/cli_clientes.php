@@ -1,8 +1,7 @@
 <?php
 
-    require './conexao.php';
+    require '../database/conexao.php';
    
-
     $file = $_FILES["file"]["tmp_name"];
     $name = $_FILES["file"]["name"];
 

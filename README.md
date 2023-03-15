@@ -15,6 +15,8 @@ O arquivo Dockerfile é responsável por baixar o servidor apache e o php na versã
     docker-compose up -d
 ```
 
+Caso utilize o docker-compose, basta digitar no navegador localhost
+
 
 ## Tabelas
 

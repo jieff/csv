@@ -5,12 +5,6 @@ $database = "csv";
 $user = "root";
 $pass = "root";
 
-//A Mil
-//$host ="db01.ksys.net.br";
-//$database = "bemtevi_a_mil";
-//$user = "a_mil";
-//$pass = "!7E1Yad6lfbf";
-
 $mysqli = new mysqli($host, $user, $pass, $database);
 mysqli_set_charset($mysqli, "utf8");
 

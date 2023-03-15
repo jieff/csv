@@ -8,6 +8,7 @@
                         </svg>
                         </h2>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <form  method="POST" action="./src/fin_cobrancascliente.php" enctype="multipart/form-data">
                             <label for="">Arquivo</label>
                             <input class="btn btn-outline-light" type="file" name="file">
@@ -24,6 +25,9 @@
                             </select> -->
 =======
                         <form  method="POST" action="./src/pat_equipamentos.php" enctype="multipart/form-data">
+=======
+                        <form  method="POST" action="./src/empresas/brDrive/cli_contatos.php" enctype="multipart/form-data">
+>>>>>>> 0578105 (update brdrive)
                             <label for="">Arquivo</label>
                             <input class="btn btn-outline-light" type="file" name="file">
 >>>>>>> 9150f47 (primeiro commit)
