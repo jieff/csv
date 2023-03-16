@@ -2,8 +2,6 @@
 
 require '../../../src/includes/head.html';
 
-//require '../../../src/includes/navbar.php';
-
 ?>
 
 <div class="p-5 mb-4 bg-light rounded-3 ">
@@ -25,7 +23,6 @@ require '../../../src/includes/head.html';
         </div>
     </div>
 </div>
-
 
 <?
 
