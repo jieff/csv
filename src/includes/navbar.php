@@ -36,7 +36,7 @@
             Conversor
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="../../src/includes/equipamentos/equipamentos.php">csv</a></li>
+            <li><a class="dropdown-item" href="../../src/includes/conversor/csv.php">csv</a></li>
           </ul>
         </li>
       </ul>
